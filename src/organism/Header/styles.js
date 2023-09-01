@@ -7,6 +7,7 @@ justify-content: space-between;
 align-items: center;
 display: flex;
 padding: 13px 31px 13px 34px;
+margin: 0 0 28px 0;
 
 
 button {

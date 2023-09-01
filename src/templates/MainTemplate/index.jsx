@@ -12,7 +12,7 @@ function MainTemplate() {
 
   
     <Outlet />
-    <footer>Footer da página</footer></>;
+   </>;
 }
 
 export default MainTemplate;
