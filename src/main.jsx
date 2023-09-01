@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ErrorElement from "./pages/404/index.jsx";
+import Cadastro from "./pages/Cadastro/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +18,16 @@ const router = createBrowserRouter([
         path: "",
         element: <Home/>,
       },
-      {
-        path: "login",
-        element: <Login/>,
-      },
     ],
   },
+{
+  path: '/login',
+  element: <Login/>,
+},
+{
+  path: '/cadastro',
+  element: <Cadastro/>
+},
 
 ]);
 

@@ -1,14 +1,13 @@
-import Line from "../../atom/Line";
-import ButtonAnswer from "../../organism/ButtonAnswer";
+import { StyledContainer } from "./style";
 import Coment from "../../organism/Coment";
 import Post from "../../organism/Post";
 
 export default function Home() {
-    return <>
+    return <StyledContainer>
+      <div className="wrapper">
     <Post/>
     <Coment/>
-    <ButtonAnswer/>
-    <Line/>
-    </>;
+    </div>
+    </StyledContainer>;
   }
   
