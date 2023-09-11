@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ErrorElement from "./pages/404/index.jsx";
 import Cadastro from "./pages/Cadastro/index.jsx";
+import HomePrincipal from "./pages/HomePrincipal/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,16 @@ const router = createBrowserRouter([
     errorElement: <ErrorElement/>,
     children: [
       {
-        path: "",
+        path: "/home",
         element: <Home/>,
+      },
+      {
+        path: '/cadastro',
+        element: <Cadastro/>,
+      },
+      {
+        path: '',
+        element: <HomePrincipal/>,
       },
     ],
   },
@@ -24,10 +33,7 @@ const router = createBrowserRouter([
   path: '/login',
   element: <Login/>,
 },
-{
-  path: '/cadastro',
-  element: <Cadastro/>
-},
+
 
 ]);
 

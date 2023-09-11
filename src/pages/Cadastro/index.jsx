@@ -1,19 +1,30 @@
+import { useNavigate } from "react-router-dom";
+import { StyledHeader } from "./style";
+import { goToHomePrincipal } from "../../router/coordinator";
 import Header from "../../organism/Header";
-import { StyledContainer } from "./style";
-
 
 export default function Cadastro() {
-    return <>
-    <Header/>
+  const navigate = useNavigate();
+  return (
+    <StyledHeader>
     
-    <h1>Olá, boas vindas ao LabEddit ;&#41;</h1>
-    <input/>
-    <input/>
-    <input/>
-    <span>Ao continuar</span>
-   
-   <label><input type="checkbox"/>aaa</label>
-   <button></button>
-    </>
-  }
-  
+      <h1>Olá, boas vindas ao LabEddit ;&#41; </h1>
+      <form>
+      <input className="input1" placeholder="Apelido" />
+      <input className="input2" placeholder="E-mail" />
+      <input className="input3" placeholder="Senha" />
+      <spa>
+        Ao continuar, você concorda com o nosso Contrato de usuário e nossa
+        Política de Privacidade
+      </spa>
+      <label className="label1">
+        <input id="checkbox" type="checkbox" />
+        Eu concordo em receber emails sobre coisas legais no LabedditApelido
+      </label>
+      <button onClick={() => goToHomePrincipal(navigate)} className="button1">
+        Cadastrar
+      </button>
+      </form>
+    </StyledHeader>
+  );
+}
