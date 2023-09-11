@@ -1,15 +1,13 @@
 import { StyledContainer } from "./style";
-import Coment from "../../organism/Coment";
 import Post from "../../organism/Post";
+import ComentPrincipal from "../../organism/ComentPrincipal";
 
-export default function Home() {
+export default function HomePrincipal() {
     return <StyledContainer>
       <div className="wrapper">
+      <ComentPrincipal/>
     <Post/>
-   <Post/>
-   <Post/>
-   <Post/>
-   <Post/>
+   
     </div>
     </StyledContainer>;
   }

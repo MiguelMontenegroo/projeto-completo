@@ -4,16 +4,29 @@ export const StyledContainer = styled.div`
 display: flex;
 
 
-button + button {
-    margin: 0 0 0 11px;
+.arrow-button{
+    border: none;
+    background: transparent;
 }
 
-button {
+.transparent-with-border {
     border-radius: 28px;
     border: 1.5px solid #ECECEC;
     background: transparent;
     padding: 4.67px;
     align-items: center;
+    display: flex;
+}
+
+button.transparent-with-border{
+margin: 0 0 0 11px;
+}
+
+.select-liked{
+    background: green;
+}
+.select-disliked{
+    background: red;
 }
 
 strong{
@@ -23,9 +36,7 @@ strong{
     font-size: 9.561px;
     
 }
-.setaBaixo{
-    
-}
+
 `
 
 export const StyledImg = styled.img`
