@@ -6,6 +6,11 @@ export const StyledHeader = styled.header`
   align-items: center;
   margin: 0 56px 0;
 
+form{
+  display: flex;
+  flex-direction: column;
+}
+
   h1 {
     width: 364px;
     color: #373737;

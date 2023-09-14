@@ -4,7 +4,7 @@ import { StyledContainer, StyledImg } from "./style"
 import { goToHome } from "../../router/coordinator"
 import { useNavigate } from "react-router-dom";
 
-export default function ActionsButtonsPost({ likedState, setLikedState, setIsCommentOpen }) {
+export default function ActionsButtonsPost({ likedState, setLikedState, setIsCommentOpen, likes, dislikes, comments, likeOrDislike, postId }) {
 
     const navigate = useNavigate();
 
@@ -18,17 +18,17 @@ export default function ActionsButtonsPost({ likedState, setLikedState, setIsCom
 
     return <StyledContainer>
         <div className={` transparent-with-border`}>
-            <button onClick={() => { setLikedState(prev => prev === "liked" ? "" : "liked") }} className="arrow-button">
+            <button onClick={() => {likeOrDislike(postId, true), setLikedState(prev => prev === "liked" ? "" : "liked") }} className="arrow-button">
                 <img className={`${likedState === "liked" ? "select-liked" : ""}`} src={likebutton} alt="seta transparente" />
             </button>   
-            <strong>1.2k</strong>
-            <button onClick={() => { setLikedState(prev => prev === "disliked" ? "" : "disliked") }} className="arrow-button">
+            <strong>{(likes - dislikes) || 0}</strong>
+            <button onClick={() => {likeOrDislike(postId, false), setLikedState(prev => prev === "disliked" ? "" : "disliked") }} className="arrow-button">
                 <StyledImg className={`${likedState === "disliked" ? "select-disliked" : ""}`} src={likebutton} alt="seta transparente" />
             </button>
         </div>
         <button onClick={handleActivateComment} className="transparent-with-border">
             <img src={coment} alt="icone de comentar" />
-            <strong>122</strong>
+            <strong>{comments}</strong>
         </button>
     </StyledContainer>
 }
