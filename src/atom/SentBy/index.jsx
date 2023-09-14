@@ -1,5 +1,5 @@
 import { StyledContainer } from "./style"
 
-export default function SentBy(){
-    return <StyledContainer>Enviado por: Miguel</StyledContainer>
+export default function SentBy({creator}){
+    return <StyledContainer>Enviado por: {creator}</StyledContainer>
 }
