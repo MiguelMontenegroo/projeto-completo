@@ -33,13 +33,29 @@ const likeOrDislike = async (postId, value) => {
   }
 }
 
+const createPost = async (content, e) => {
+e.preventDefault()
+  try {
+
+  if(!content){
+     return
+  }
+  const headers = {headers: {Authorization: token}}
+  const body = {content: content}
+  await axios.post(`${BASE_URL}posts`, body, headers)
+  getPosts()
+} catch (error) {
+  console.log(error)
+}
+}
+
   useEffect(()=>{
     getPosts()
   }, [])
   console.log(posts)
     return <StyledContainer>
       <div className="wrapper">
-      <ComentPrincipal/>
+      <ComentPrincipal createPost={createPost}/>
       {posts.map((post) => (
         <Post likeOrDislike={likeOrDislike} postId={post.id} text={post.content} creator={post.creator.name} likes={post.likes} dislikes={post.dislikes} comments={post.comments}/>
       ))}
