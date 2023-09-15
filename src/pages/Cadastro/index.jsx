@@ -21,7 +21,7 @@ export default function Cadastro() {
 
   const cadastro = async (e) => {
    e.preventDefault();
-  console.log("miguel")
+
    try {
       const body = {
         nickname: form.name,

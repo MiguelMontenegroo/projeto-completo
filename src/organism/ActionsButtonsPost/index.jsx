@@ -10,10 +10,8 @@ export default function ActionsButtonsPost({ likedState, setLikedState, setIsCom
 
     function handleActivateComment() {
         if (!/.\/home/.test(location.href)) {
-            goToHome(navigate)
-        } else {
-            setIsCommentOpen(prev => !prev)
-        }
+            goToHome(navigate, postId)
+        } 
     }
 
     return <StyledContainer>
@@ -26,9 +24,10 @@ export default function ActionsButtonsPost({ likedState, setLikedState, setIsCom
                 <StyledImg className={`${likedState === "disliked" ? "select-disliked" : ""}`} src={likebutton} alt="seta transparente" />
             </button>
         </div>
-        <button onClick={handleActivateComment} className="transparent-with-border">
+        {comments !== undefined && <button onClick={handleActivateComment} className="transparent-with-border">
             <img src={coment} alt="icone de comentar" />
-            <strong>{comments}</strong>
-        </button>
+            <strong>{comments || 0}</strong>
+        </button>}
+       
     </StyledContainer>
 }

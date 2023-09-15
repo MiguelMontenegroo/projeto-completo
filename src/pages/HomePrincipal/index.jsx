@@ -52,7 +52,7 @@ e.preventDefault()
   useEffect(()=>{
     getPosts()
   }, [])
-  console.log(posts)
+ 
     return <StyledContainer>
       <div className="wrapper">
       <ComentPrincipal createPost={createPost}/>
