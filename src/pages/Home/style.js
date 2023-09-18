@@ -8,7 +8,7 @@ align-items: center;
  .post-container{
     display: flex;
     flex-direction: column-reverse;
-    
+    gap:10px !important;
 } 
 
 .wrapper{
