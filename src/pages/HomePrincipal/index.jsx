@@ -4,10 +4,12 @@ import ComentPrincipal from "../../organism/ComentPrincipal";
 import { useEffect, useState } from "react";
 import { BASE_URL, TOKEN_NAME } from "../../constants/url";
 import axios from "axios"
+import { goToLogin } from "../../router/coordinator";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePrincipal() {
   const [posts,setPosts] = useState([])
-
+ const navigate = useNavigate()
 const token = localStorage.getItem(TOKEN_NAME)
 
   const getPosts = async () => {
@@ -52,6 +54,12 @@ e.preventDefault()
   useEffect(()=>{
     getPosts()
   }, [])
+  useEffect(()=>{
+    if(!token){
+    goToLogin(navigate)
+    }
+  }, [token])
+  
  
     return <StyledContainer>
       <div className="wrapper">
